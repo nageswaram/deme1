@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="deme1"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.960">
+    <properties></properties>
+
+
+
+            <testcase
+                name="testDropDown"
+                time="0.960"
+                classname="SeleniumSampleTest">
+            </testcase>
+</testsuite>
