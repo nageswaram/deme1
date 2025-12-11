@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.960">
+           time="0.765">
     <properties></properties>
 
 
 
             <testcase
-                name="testDropDown"
-                time="0.960"
+                name="testGoogle"
+                time="0.765"
                 classname="test.SeleniumSampleTest">
             </testcase>
 </testsuite>
