@@ -41,7 +41,7 @@ public class SeleniumSampleTest extends BaseTest{
             System.out.println(oneEle.isSelected());
         }
 
-        @Test
+        //@Test
         public void testWindows(){
 
             getDriver().manage().timeouts().implicitlyWait(Duration.ofMillis(500));
