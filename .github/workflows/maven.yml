@@ -21,7 +21,7 @@ jobs:
         cache: 'maven' # Caches Maven dependencies for faster subsequent runs
 
     - name: Build and Run Tests with Maven
-      run: mvn clean test # Command to compile and execute tests using Maven
+      run: mvn test # Command to compile and execute tests using Maven
       shell: powershell # Use PowerShell for Windows commands
 
     # Optional: Upload test results artifact (e.g., Surefire reports)
