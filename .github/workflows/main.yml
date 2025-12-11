@@ -1,4 +1,4 @@
-name: Run Selenium Tests and Generate Report
+name: SeleniumTest
 
 on:
   workflow_dispatch:
@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5 
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@< version >
 
       - name: Run the Maven verify phase
         run: mvn test
