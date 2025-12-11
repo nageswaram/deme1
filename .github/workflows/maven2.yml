@@ -1,0 +1,32 @@
+name: Maven2
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4 # Check out the repository code
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17' # Specify your required Java version (e.g., 11, 17, 21)
+        distribution: 'temurin'
+        cache: 'maven' # Caches Maven dependencies for faster subsequent runs
+
+    - name: Build and Run Tests with Maven
+      run: mvn clean test # Command to compile and execute tests using Maven
+      shell: powershell # Use PowerShell for Windows commands
+
+    # Optional: Upload test results artifact (e.g., Surefire reports)
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: target/surefire-reports # Standard Maven test results directory
