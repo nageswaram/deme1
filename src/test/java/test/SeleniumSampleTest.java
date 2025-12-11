@@ -1,3 +1,4 @@
+package test;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
@@ -8,7 +9,6 @@ import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
-
 public class SeleniumSampleTest extends BaseTest{
 
         @Test
