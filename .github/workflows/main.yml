@@ -1,0 +1,16 @@
+name: Run Selenium Tests and Generate Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [self-hosted]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5 
+
+      - name: Run the Maven verify phase
+        run: mvn test
+
