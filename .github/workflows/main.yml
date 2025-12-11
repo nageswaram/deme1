@@ -12,12 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5 
 
-      - name: Setup Maven Action
-        uses: s4u/setup-maven-action@< version >
-        with:
-          java-version: 25
-          maven-version: 3.9.11
-
       - name: Run the Maven verify phase
         run: mvn test
 
