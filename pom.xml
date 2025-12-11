@@ -67,9 +67,6 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.5.4</version>
-            <configuration>
-                <skipTests>true</skipTests> <!-- Skip tests during the build -->
-            </configuration>
         </plugin>
 
         <plugin>
@@ -80,6 +77,8 @@
                 <target>1.8</target>
             </configuration>
         </plugin>
+
+
     </plugins>
     </build>
 
