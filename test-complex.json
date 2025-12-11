@@ -1,0 +1,9 @@
+{
+  "name": "nageswara",
+  "age" : 50,
+  "address" : {
+    "address1": "4774 Tilly Drive",
+    "city" : "Folsom",
+    "zip" : 95630
+  }
+}
