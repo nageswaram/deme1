@@ -1,6 +1,8 @@
 package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,7 +10,9 @@ import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.annotations.*;
 
 public class BaseTest {
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+
+    protected static final Logger log = LogManager.getLogger(BaseTest.class.getName());
 
     @Parameters("browser")
     @BeforeClass

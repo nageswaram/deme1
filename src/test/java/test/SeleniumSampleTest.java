@@ -16,8 +16,12 @@ public class SeleniumSampleTest extends BaseTest{
             System.out.println("<- TestLambdaTestPlayground -> Executed by Thread : " + Thread.currentThread().getId()
                     + " on driver reference : " + getDriver());
             getDriver().get("https://www.lambdatest.com/selenium-playground/");
-            System.out.println("Title printed by Thread : " + Thread.currentThread().getId() + " <- "
+            //System.out.println("Title printed by Thread : " + Thread.currentThread().getId() + " <- "
+//                    + getDriver().getTitle() + " -> on driver reference : " + getDriver());
+
+            log.info("Title printed by Thread : " + Thread.currentThread().getId() + " <- "
                     + getDriver().getTitle() + " -> on driver reference : " + getDriver());
+
         }
 
 
@@ -29,16 +33,16 @@ public class SeleniumSampleTest extends BaseTest{
 
             WebElement oneEle = getDriver().findElement(By.cssSelector("option[value='one']"));
 
-            select.getOptions().stream().map(s -> s.getText()).forEach(System.out::println);
+            select.getOptions().stream().map(WebElement::getText).forEach(System.out::println);
 
             select.selectByValue("two");
 
-            System.out.println(select.getFirstSelectedOption().getText());
-            System.out.println( );
+            log.info(select.getFirstSelectedOption().getText());
+
 
             select.selectByIndex(0);
-            System.out.println(select.getFirstSelectedOption().getText());
-            System.out.println(oneEle.isSelected());
+            log.info(select.getFirstSelectedOption().getText());
+            log.info(oneEle.isSelected());
         }
 
         //@Test
@@ -51,7 +55,7 @@ public class SeleniumSampleTest extends BaseTest{
             String currHandle=getDriver().getWindowHandle();
             SoftAssert soft = new SoftAssert();
             //assertNotNull(currHandle);
-            soft.assertNull(currHandle);
+            soft.assertNotNull(currHandle);
 
             //click on link to open a new window
             getDriver().findElement(By.linkText("Open new window")).click();
@@ -75,7 +79,7 @@ public class SeleniumSampleTest extends BaseTest{
 
             //Opens a new window and switches to new window
             getDriver().switchTo().newWindow(WindowType.WINDOW);
-            assertEquals("",getDriver().getTitle());
+            assertEquals(getDriver().getTitle(), "");
             soft.assertNotEquals("",getDriver().getTitle());
 
             soft.assertAll();
